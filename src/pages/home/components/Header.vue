@@ -9,7 +9,7 @@
     </div>
     <div class="header-right">
       <span class="right-text">城市</span>
-      <i class="el-icon-caret-bottom" style="font-size: 20px;"></i>
+      <i class="el-icon-caret-bottom"></i>
     </div>
   </div>
 </template>
