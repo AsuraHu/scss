@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="show">
       <swiper-slide
-        v-for="item of swiperList"
+        v-for="item of list"
         :key="item.id"
       >
         <img class="swiper-img" :src="item.imgUrl">
@@ -15,22 +15,20 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201911/0885dc58d87b07dff553140a1dd26a36.jpg_750x200_d7105b0b.jpg'
-      }, {
-        id: '0002',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201910/e7eac5a5e99e6517c61b953c0fece63b.jpg_750x200_4b701cf8.jpg'
-      }, {
-        id: '0003',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201911/1083d0bc308e6cc4f92660995bd4ec7d.jpg_750x200_4e0f42dc.jpg'
-      }]
+      }
+    }
+  },
+  computed: {
+    show () {
+      return this.list.length
     }
   }
 }
@@ -43,7 +41,7 @@ export default {
     overflow: hidden
     width: 100%
     height: 0rem
-    padding-bottom: 26.67%
+    padding-bottom: 31.25%
     background-color: #eee
     .swiper-img
       width: 100%
