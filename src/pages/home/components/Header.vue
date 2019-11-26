@@ -7,10 +7,12 @@
       <i class="el-icon-search" style="font-size: 18px;"></i>
       <span>输入城市游玩主题</span>
     </div>
-    <div class="header-right">
-      <span class="right-text">{{this.city}}</span>
-      <i class="el-icon-caret-bottom"></i>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        <span class="right-text">{{this.city}}</span>
+        <i class="el-icon-caret-bottom"></i>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -26,8 +28,8 @@ export default {
 <style scoped lang="stylus">
   @import '~styles/varibles.styl'
   .header
-    height: .86rem
-    line-height: .86rem
+    height: $headerHeight
+    line-height: $headerHeight
     display: flex
     background-color: $bgcolor
     color: #fff
@@ -36,13 +38,14 @@ export default {
       float: left
       .el-icon-arrow-left
         display: block
-        height: .86rem
-        line-height: .86rem
+        height: $headerHeight
+        line-height: $headerHeight
         text-align: center
     .header-right
       width: 1.24rem
       float: right
       text-align: center
+      color: #fff
       .right-text
         display: inline-block
       .el-icon-caret-bottom
