@@ -21,7 +21,7 @@ export default {
       height: .62rem
       padding: 0 .2rem
       box-sizing: border-box
-      line-height: .62rem
+      line-height: .61rem
       text-align: center
       border-radius: .06rem
 </style>
