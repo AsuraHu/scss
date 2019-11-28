@@ -3,7 +3,11 @@
     <router-link tag="div" to="/" class="header-abs" v-show="absShow">
       <i class="el-icon-arrow-left" style="font-size: 24px;"></i>
     </router-link>
-    <div class="header-fixed" v-show="!absShow" :style="opacityStyle">
+    <div
+      class="header-fixed"
+      v-show="!absShow"
+      :style="opacityStyle"
+    >
       景点详情
       <router-link to="/">
         <div class="header-back">
@@ -25,7 +29,7 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
@@ -49,6 +53,14 @@ export default {
 
 <style scoped lang="stylus">
   @import '~styles/varibles.styl'
+  .el-icon-arrow-left:before
+    display: inline-block
+    text-align: center
+    color: #fff
+    height: 40px
+    width: 40px
+    line-height: 40px
+    text-align: center
   .header-abs
     position: absolute
     left: .2rem
@@ -61,7 +73,7 @@ export default {
     background-color: rgba(0, 0, 0, .8)
     color: #fff
   .header-fixed
-    z-index: 9
+    z-index: 99
     position: fixed
     top: 0
     left: 0
@@ -77,10 +89,4 @@ export default {
       top: 0
       left: 0
       width: .64rem
-      .el-icon-arrow-left
-        display: block
-        height: $headerHeight
-        line-height: $headerHeight
-        text-align: center
-        color: #fff
 </style>

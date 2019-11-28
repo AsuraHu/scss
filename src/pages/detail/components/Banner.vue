@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1604/7e/7ebf319b2473714390.img.jpg_600x330_f3b60ffb.jpg">
+      <img class="banner-img" :src="bannerImg">
       <div class="banner-info">
         <div class="banner-tittle">
-          丹景山旅游景区(AA景区)
+          {{sightName}}
         </div>
         <div class="banner-number">
           <i class="el-icon-picture"></i>
-          5
+          {{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
     <banner-gallery
-      :imgs="imgs"
+      :imgs="gallaryImgs"
       v-show="isShow"
       @close="clickGalleryHide"
     ></banner-gallery>
@@ -24,13 +24,17 @@
 import BannerGallery from 'public/gallery/Gallery'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   components: {
     BannerGallery
   },
   data () {
     return {
-      isShow: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/1604/7e/7ebf319b2473714390.img.jpg_r_800x800_8b93819b.jpg', 'http://img1.qunarzz.com/sight/p0/1604/73/737118f14d5adb4990.img.jpg_r_800x800_80ad400d.jpg']
+      isShow: false
     }
   },
   methods: {
