@@ -61,6 +61,7 @@ export default {
     background-color: rgba(0, 0, 0, .8)
     color: #fff
   .header-fixed
+    z-index: 9
     position: fixed
     top: 0
     left: 0
